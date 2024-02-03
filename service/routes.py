@@ -8,7 +8,6 @@ from flask import jsonify, request, make_response, abort, url_for   # noqa; F401
 from service.models import Account
 from service.common import status  # HTTP Status Codes
 from . import app  # Import Flask application
-from tests.test_routes import BASE_URL
 
 
 ############################################################
@@ -95,12 +94,6 @@ def get_accounts(account_id):
     if not account:
         abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
     return account.serialize(), status.HTTP_200_OK
-
-
-def test_get_account_not_found(self):
-    """It should not Read an Account that is not found"""
-    resp = self.client.get(f"{BASE_URL}/0")
-    self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
 
 
 ######################################################################
