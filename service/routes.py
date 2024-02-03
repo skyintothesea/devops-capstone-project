@@ -96,7 +96,6 @@ def get_accounts(account_id):
     return account.serialize(), status.HTTP_200_OK
 
 
-
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
